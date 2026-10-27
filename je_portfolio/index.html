@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jeryc | Portfolio</title>
+  <meta name="description" content="Jeryc Siscar — game developer based in Malta. Games, development experience and creative work.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="portfolio">
+    <header class="profile">
+      <p class="eyebrow">GAME DEVELOPER · MALTA</p>
+      <h1>Jeryc Siscar</h1>
+
+      <img
+        class="profile-photo"
+        src="images/profile.jpg"
+        alt="Jeryc Siscar"
+        width="180"
+        height="180"
+      >
+
+      <div class="social-links">
+        <a href="mailto:siscarjeryc@gmail.com">Email</a>
+        <a href="https://www.github.com/jeryc-s">GitHub</a>
+        <a href="https://www.linkedin.com/in/jeryc-undefined-b8b67243b/">
+          LinkedIn
+        </a>
+        <a href="https://jeryc-siscar.itch.io/">itch.io</a>
+      </div>
+    </header>
+
+    <div class="introduction"><p>Yo, I’m Jeryc! <span>I build games, explore ideas, and play a little too much.</span></p></div>
+
+    <nav class="section-navigation" aria-label="Portfolio sections">
+      <button
+        type="button"
+        class="nav-button active"
+        data-section="projects"
+        aria-controls="projects"
+        aria-pressed="true"
+      >
+        Projects
+      </button>
+
+      <button
+        type="button"
+        class="nav-button"
+        data-section="career"
+        aria-controls="career"
+        aria-pressed="false"
+      >
+        Career
+      </button>
+
+      <button
+        type="button"
+        class="nav-button"
+        data-section="skills"
+        aria-controls="skills"
+        aria-pressed="false"
+      >
+        Skills
+      </button>
+
+      <button
+        type="button"
+        class="nav-button"
+        data-section="about"
+        aria-controls="about"
+        aria-pressed="false"
+      >
+        About
+      </button>
+    </nav>
+
+    <main>
+      <section
+  id="projects"
+  class="content-section"
+  aria-labelledby="projects-heading"
+>
+  <h2 id="projects-heading">Selected games</h2>
+
+  <p class="section-description">
+    Three projects. Different challenges. Plenty learned.
+  </p>
+
+  <div class="projects-list">
+    <!-- GAME 1 -->
+     <article class="game-card"> 
+      <div class="game-art"><span class="project-number" aria-hidden="true">01</span><img
+        class="game-image"
+        src="images/Logos/StreetKarateLogo.png"
+        alt="Street Karate Logo"
+        width="315"
+        height="250"
+      ></div>
+
+      <div class="game-content">
+        <h3>Street Karate</h3>
+        <p class="entry-meta">Unity · C# · GameJam</p>
+
+        <p>
+          Street Karate is a game made inspired by the game Street Fighter. It was made during the MCAST hosted Retro GameJam.   
+          It has a simple concept where two players combat head to head to see who wins. 
+        </p>
+
+        <details><summary>My contribution</summary><p class="contribution">
+          During this GameJam, I was assigned as the main programmer; primarily focusing on all the mechanics that will be used throughout the game, 
+          whilst also incorporating the UI and animations into the game.
+        </p></details>
+
+        <!-- URLss -->
+        <div class="game-links">
+          <a class="button-link" href="https://althruist.itch.io/street-karate">
+            Play game <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button-link" href="https://github.com/althruist/retrojam">
+            Source code <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- GAME 2 -->
+    <article class="game-card">
+      <div class="game-art"><span class="project-number" aria-hidden="true">02</span><img
+        class="game-image"
+        src="images/Logos/OvertaleLogo.png"
+        alt="Overtale Logo"
+        width="315"
+        height="250"
+        loading="lazy"
+      ></div>
+
+      <div class="game-content">
+        <h3>Overtale</h3>
+        <p class="entry-meta">Unity · C# · Solo Home Assignment</p>
+
+        <p>
+          This home assignment for my 'Object Oriented Programming' class had been one of my trickiest assignments, yet one that felt the most accomplishing.  
+          Overtale is a game where the player gets trapped in a dungeon and has to search different identical rooms in order to find keys.  
+          Upon unlocking all keys, a portal activates and the player can escape.   
+          However, there are traps and monsters around that will try to harm you, so watch out!   
+        </p>
+
+        <details><summary>My contribution</summary><p class="contribution">
+          For this game, I had programmed all the code and mechanics myself (with aid from the lecturer). 
+          Creating the environment, as well as learning how to try procedural content generation for the first time were great challenges, yet it was a satisfying learning milestone.
+          This had also been a change in coding style; where we had been used to creating one script for the whole game, now we had to use OOP in order to organize this project.
+        </p></details>
+
+        <div class="game-links">
+          <a class="button-link" href="https://jeryc-siscar.itch.io/overtale">
+            Play game <span aria-hidden="true">↗</span>
+          </a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <!-- GAME 3 -->
+    <article class="game-card">
+      <div class="game-art"><span class="project-number" aria-hidden="true">03</span><img
+        class="game-image"
+        src="images/Logos/CascadeLogo.png"
+        alt="Cascade"
+        width="315"
+        height="250"
+        loading="lazy"
+      ></div>
+
+      <div class="game-content">
+        <h3>Cascade</h3>
+        <p class="entry-meta">Unity · C# · GameJam</p>
+
+        <p>
+          Cascade is a game created for the Unity GameJam which had the theme 
+          'Chain Reaction'. In this game, the player places three different types of bombs (Cross, Plus, Radius) in a grid-like field
+          in order to hit randomly placed barrels throughout the level. These barrels give points, whilst each level has a score threshold.
+        </p>
+
+        <details><summary>My contribution</summary><p class="contribution">
+          During this GameJam, I was assigned as a Game Tester. Finding bugs, solving them, as well as adding quality of life changes to ensure
+          smooth gameplay, while the main programmer codes the core game mechanics.
+        </p></details>
+
+        <div class="game-links">
+          <a class="button-link" href="https://fire-fist-hero.itch.io/cascade">
+            Play game <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button-link" href="https://github.com/althruist/unity-gamejam-2026">
+            Source code <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+      <section
+        id="career"
+        class="content-section"
+        aria-labelledby="career-heading"
+        hidden
+      >
+
+        <article class="entry">
+          <h2 id="career-heading">Education</h2>
+          <h3>Malta College of Arts, Science and Technology</h3>
+          <p class="entry-meta">2023 – Ongoing</p>
+
+          <p>
+            Bachelor of Science (Honours) in Digital Games Development
+            
+          </p>
+        </article>
+
+        <article class="entry">
+          <h2>Work Experience</h2>
+          <h3>UI/UX Developer (Student Intern)</h3>
+          <p class="entry-meta">Quantasoft s.r.o. · 28/07/2026 – 25/09/2026 </p>
+
+          <p>
+            During my summer internship at Quantasoft, I used an Orbbec depth camera to scan a physical model and capture its measurements. 
+            I processed the scan data in Blender to create a 3D model and helped develop a WebGL application to display it interactively.
+          </p>
+        </article>
+
+        <article class="entry">
+          <h2>Work Experience</h2>
+          <h3>Technical Service Officer</h3>
+          <p class="entry-meta">Malta Information Technology Agency · 01/07/2024 – 30/06/2026 </p>
+
+          <p>
+            During my time at MITA, I provided IT support to clients, helping resolve technical issues related to Microsoft 365 and assisting with local software upgrades. 
+            I also responded to reported queries, guiding users through troubleshooting steps and communicating solutions clearly. 
+            This experience strengthened my problem-solving and communication skills while giving me practical experience supporting users in a professional IT environment.
+          </p>
+        </article>
+      </section>
+
+      <section
+        id="skills"
+        class="content-section"
+        aria-labelledby="skills-heading"
+        hidden
+      >
+        <h2 id="skills-heading">Skills</h2>
+
+        <div class="skill-groups"><article class="skill-group"><h3>Programming</h3><ul class="skills-list"><li>C++</li><li>C#</li><li>JavaScript</li><li>SQL</li></ul></article><article class="skill-group"><h3>Game engines</h3><ul class="skills-list"><li>Unity</li><li>Godot</li><li>Unreal Engine</li></ul></article><article class="skill-group"><h3>Creative & web</h3><ul class="skills-list"><li>Blender</li><li>HTML</li><li>CSS</li><li>GitHub</li></ul></article></div>
+      </section>
+
+      <section
+        id="about"
+        class="content-section"
+        aria-labelledby="about-heading"
+        hidden
+      >
+        <h2 id="about-heading">About Me</h2>
+
+      <figure class="about-photo">
+        <img
+          src="images/hiking.jpg"
+          alt="switzerland pic"
+          loading="lazy"
+        >
+        <figcaption>AFK</figcaption>
+      </figure>
+
+        <article class="entry">
+          <h3>Hello!</h3>
+          <p>
+            I'm Jeryc. An aspiring game developer based in Malta who is currently studying a Bachelor's Degree in Digital Games Development in MCAST.
+            <br>
+            I mainly excel in coding, yet take a lot of interest in the creative side of game development (especially 3D Modelling!).
+            <br>
+            Away from technology, I really enjoy playing volleyball, travelling, and going on hikes!
+          </p>
+          <br>
+          <p>
+            Interested in working together?
+            <a href="mailto:siscarjeryc@gmail.com">Get in touch.</a>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Jeryc Siscar</p> <br>
+      <p>Please note that this website is still under development and is still to be improved - jeryc :]</p>
+    </footer>
+  </div>
+</body>
+</html>

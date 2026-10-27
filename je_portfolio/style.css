@@ -1,0 +1,722 @@
+/* ========================================
+   Theme
+======================================== */
+
+:root {
+  --background: #101b30;
+  --surface: #192740;
+  --text: #edf2ff;
+  --muted: #aab9d2;
+  --border: #ffffff20;
+  --accent: #fff36b;
+  --radius: 18px;
+}
+
+/* ========================================
+   Base styles
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      #23444170,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 100% 45%,
+      #292c5840,
+      transparent 45%
+    ),
+    var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Subtle dotted background. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    #c9d7ff12 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  z-index: -1;
+}
+
+.portfolio {
+  width: min(960px, 100%);
+  margin-inline: auto;
+  padding: 64px 28px 24px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ========================================
+   Typography
+======================================== */
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+.eyebrow,
+.entry-meta,
+.nav-button,
+.social-links,
+.game-links,
+.skills-list,
+summary {
+  font-family: "Courier New", monospace;
+}
+
+h1 {
+  font-size: clamp(34px, 7vw, 56px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 28px;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+/* ========================================
+   Links and keyboard focus
+======================================== */
+
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+  transition: color 0.18s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+
+/* ========================================
+   Profile
+======================================== */
+
+.profile {
+  text-align: center;
+  animation: enter 0.6s ease both;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.profile-photo {
+  display: block;
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--background);
+  outline: 1px solid #fff36b70;
+  margin: 0 auto 24px;
+  box-shadow: 0 0 45px #fff36b0a;
+}
+
+/* ========================================
+   Social links
+======================================== */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.social-links a {
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 6px 13px;
+  border-radius: 100px;
+  background: #ffffff03;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.social-links a:hover {
+  background: #fff36b0a;
+  border-color: #fff36b70;
+}
+
+/* ========================================
+   Introduction
+======================================== */
+
+.introduction {
+  text-align: center;
+  padding: 28px 0 32px;
+}
+
+.introduction p {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.introduction span {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* ========================================
+   Section navigation
+======================================== */
+
+.section-navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: #0b1425a6;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.nav-button {
+  padding: 12px 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.nav-button:hover {
+  background: #ffffff08;
+  color: var(--text);
+}
+
+.nav-button.active {
+  color: var(--accent);
+  background: #fff36b0c;
+  border-color: #fff36b35;
+}
+
+/* ========================================
+   Content sections
+======================================== */
+
+.content-section {
+  animation: enter 0.32s ease both;
+}
+
+.section-description {
+  color: var(--muted);
+  margin-bottom: 26px;
+  font-size: 14px;
+}
+
+/* ========================================
+   Project cards
+======================================== */
+
+.projects-list {
+  display: grid;
+  gap: 24px;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #1d2e46,
+    #17233a
+  );
+  box-shadow: 0 12px 40px #00000012;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.game-card:focus-within {
+  border-color: #fff36b60;
+}
+
+/* Logo panel. */
+.game-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 22px;
+  background:
+    radial-gradient(
+      ellipse at center,
+      #caa77815,
+      transparent 72%
+    ),
+    #0d172980;
+  border-right: 1px solid var(--border);
+}
+
+.game-card:nth-child(2) .game-art {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #917eff20,
+      transparent 72%
+    ),
+    #0d172980;
+}
+
+.game-card:nth-child(3) .game-art {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #78cbb220,
+      transparent 72%
+    ),
+    #0d172980;
+}
+
+.project-number {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  color: #aab9d270;
+  font: 11px "Courier New", monospace;
+  letter-spacing: 2px;
+}
+
+.game-image {
+  display: block;
+  max-width: 100%;
+  width: 235px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+/* Project text. */
+.game-content {
+  padding: 28px;
+}
+
+.game-content > p:not(.entry-meta) {
+  font-size: 14px;
+  color: #c6d1e5;
+  line-height: 1.8;
+}
+
+.entry-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+/* Expandable contribution details. */
+summary {
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+  list-style-position: inside;
+  padding: 6px 0;
+}
+
+details {
+  margin-top: 14px;
+}
+
+.contribution {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 12px 0 0;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   Project buttons
+======================================== */
+
+.game-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.button-link:first-child {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #182138;
+}
+
+.button-link:first-child:hover {
+  background: #fff8ab;
+}
+
+.button-link span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.button-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* ========================================
+   Shared entry cards
+======================================== */
+
+.entry {
+  position: relative;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  background: #ffffff03;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.entry h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.entry h3 {
+  font-size: 20px;
+}
+
+.entry p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+/* ========================================
+   Career timeline
+======================================== */
+
+#career {
+  border-left: 1px solid #fff36b40;
+  padding-left: 24px;
+  margin-left: 6px;
+}
+
+#career .entry::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 30px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px var(--background);
+}
+
+/* ========================================
+   Skills
+======================================== */
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.skill-group {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff03;
+}
+
+.skill-group h3 {
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 18px 0 0;
+}
+
+.skills-list li {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #ffffff04;
+}
+
+/* ========================================
+   About me
+======================================== */
+
+#about > .entry {
+  margin-top: 24px;
+}
+
+.about-photo {
+  position: relative;
+  margin: 24px 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Darken the bottom so the caption stays readable. */
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 45%,
+    rgb(0 0 0 / 75%) 100%
+  );
+  pointer-events: none;
+}
+
+.about-photo figcaption {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  right: 24px;
+  z-index: 1;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border);
+  margin-top: 44px;
+  padding-top: 24px;
+  color: var(--muted);
+  font: 11px "Courier New", monospace;
+}
+
+/* ========================================
+   Animations
+======================================== */
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply hover movement on devices with a precise pointer. */
+@media (hover: hover) and (pointer: fine) {
+  .game-card:hover {
+    transform: translateY(-4px);
+    border-color: #fff36b50;
+    box-shadow: 0 18px 45px #00000025;
+  }
+
+  .game-card:hover .game-image {
+    transform: scale(1.04);
+  }
+}
+
+/* ========================================
+   Tablet layout
+======================================== */
+
+@media (max-width: 720px) {
+  .game-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .game-content {
+    padding: 22px;
+  }
+
+  .skill-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   Mobile layout
+======================================== */
+
+@media (max-width: 560px) {
+  .portfolio {
+    padding: 36px 18px 20px;
+  }
+
+  .game-card {
+    grid-template-columns: 1fr;
+  }
+
+  .game-art {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 28px;
+    min-height: 210px;
+  }
+
+  .game-image {
+    width: 200px;
+  }
+
+  .game-content {
+    padding: 24px;
+  }
+
+  .nav-button {
+    font-size: 11px;
+    padding: 12px 3px;
+  }
+
+  .section-navigation {
+    margin-bottom: 30px;
+  }
+
+  .introduction p {
+    font-size: 20px;
+  }
+
+  .introduction span {
+    font-size: 14px;
+  }
+
+  #career {
+    padding-left: 18px;
+  }
+
+  #career .entry::before {
+    left: -24px;
+  }
+
+  .entry {
+    padding: 22px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  .about-photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-photo figcaption {
+    bottom: 16px;
+    left: 18px;
+  }
+}
+
+/* ========================================
+   Reduced-motion accessibility
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .game-card:hover,
+  .game-card:hover .game-image,
+  .button-link:hover span {
+    transform: none;
+  }
+}
